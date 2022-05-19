@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="veiwport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>swic-webapp</title>
+  </head>
+  <body>
+    <div class="titlebar">
+      <div class="titlebar-title">
+        <h1>swic-webapp</h1>
+      </div>
+      <div class="titlebar-login">
+        <div class="titlebar-login-uname">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username">          
+        </div>
+        <div class="titlebar-login-passwd">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password">          
+        </div>
+        <div class="titlebar-login-button">
+          <input type="submit" value="Login" style="width: 66px;">       
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="sidebar-event">
+        <label for="event">Select Event:</label><br>
+        <select name="event" id="event">
+          <option value="test">test</option>
+        </select>
+      </div>
+      <div class="sidebar-update">
+        <label for="update">Select Alert to Update:</label><br>
+        <select name="update" id="update">
+          <option value="test">test</option>
+        </select>
+      </div>
+      <div class="sidebar-expire">
+        <label for="expire">Select Expiration Time:</label><br>
+        <input type="datetime-local" id="expire" name="expire" min="2000-01-01T00:00"> 
+      </div>
+      <div class="sidebar-locs">
+        <label for="locs">Select Locations:</label><br>
+        <select name="locs" id="locs" multiple>
+          <option value="test">test</option>
+        </select>
+      </div>
+      <div class="sidebar-buttons">
+        <div class="sidebar-buttons-send">
+          <input type="submit" value="Send" id="send" name="send" style="width: 66px;">
+        </div>
+        <div class="sidebar-buttons-cancel">
+          <input type="submit" value="Cancel" id="cancel" name="cancel" style="width: 66px;">
+        </div>
+        <div class="sidebar-buttons-expire">
+          <input type="submit" value="Expire" id="expire" name="expire" style="width: 66px;">
+        </div>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="main-headline">
+        <label for="headline">Headline/Alert Name:</label><br>
+        <input type="text" id="headline" name="headline">    
+      </div>
+      <div class="main-desc">
+        <label for="desc">Message:</label><br>
+        <textarea id="desc" name="desc"></textarea>    
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

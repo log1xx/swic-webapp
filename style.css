@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+.titlebar {
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titlebar-title,
+.titlebar-login {
+  margin: 10px;
+}
+
+.titlebar-login {
+  padding: 10px;
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar {
+  height: calc(100vh - 60px);
+  width: 225px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+}
+
+.sidebar > div {
+  width: 100%;
+  padding: 5px;
+}
+
+.sidebar > div > input,
+.sidebar > div > select {
+  width: 100%;
+}
+
+.sidebar-locs {
+  flex-grow: 100;
+}
+
+.sidebar-buttons {  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main {
+  height: calc(100vh - 60px);
+  width: calc(100vw - 250px);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  float: left;
+}
+
+.main > div {
+  width: 100%;
+  padding: 5px;
+}
+
+.main > div > input,
+.main > div > textarea {
+  width: 100%;
+}
+
+.main-desc {
+  flex-grow: 100;
+}
+
+.main-desc > textarea {
+  height: calc(100% - 40px);
+}
