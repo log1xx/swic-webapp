@@ -9,29 +9,39 @@
   </head>
   <body>
     <div class="titlebar">
-      <div class="titlebar-title">
-        <h1>swic-webapp</h1>
+      <div class="titlebar-top">
+        <p>swic discord</p>
       </div>
-      <div class="titlebar-login" id="titlebar-login">
-        <div class="titlebar-login-uname">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username">          
+      <div class="titlebar-mid">
+        <div class="titlebar-title">
+          <h1>swic-webapp</h1>
         </div>
-        <div class="titlebar-login-passwd">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password">          
+        <div class="titlebar-login" id="titlebar-login">
+          <div class="titlebar-login-uname">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">          
+          </div>
+          <div class="titlebar-login-passwd">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">          
+          </div>
+          <div class="titlebar-login-button">
+            <input type="submit" value="Login" style="width: 66px;" onclick="login(username.value, password.value)">       
+          </div>
         </div>
-        <div class="titlebar-login-button">
-          <input type="submit" value="Login" style="width: 66px;" onclick="login(username.value, password.value)">       
+        <div class="titlebar-logout" id="titlebar-logout">        
+          <label for="logout" id="titlebar-logout-uname">uname</label>
+          <input type="submit" value="Logout" style="width: 66px;" onclick="logout()">
         </div>
       </div>
-      <div class="titlebar-logout" id="titlebar-logout">        
-        <label for="logout" id="titlebar-logout-uname">uname</label>
-        <input type="submit" value="Logout" style="width: 66px;" onclick="logout()">
+      <div class="titlebar-bottom">
+        <p>issue your alerts using swic-webapp</p>
       </div>
     </div>
 
     <div class="sidebar">
+      <h2>Options</h2>
+      <div class="sidebar-titlesep"></div>
       <div class="sidebar-event">
         <label for="event">Select Event:</label><br>
         <select name="event" id="event"></select>
@@ -85,6 +95,8 @@
     </div>
 
     <div class="main">
+      <h2>Text Data</h2>
+      <div class="main-titlesep"></div>
       <div class="main-headline">
         <label for="headline">Headline/Alert Name:</label><br>
         <input type="text" id="headline" name="headline">    
