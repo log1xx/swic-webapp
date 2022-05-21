@@ -12,7 +12,7 @@
       <div class="titlebar-title">
         <h1>swic-webapp</h1>
       </div>
-      <div class="titlebar-login">
+      <div class="titlebar-login" id="titlebar-login">
         <div class="titlebar-login-uname">
           <label for="username">Username:</label>
           <input type="text" id="username" name="username">          
@@ -22,43 +22,64 @@
           <input type="password" id="password" name="password">          
         </div>
         <div class="titlebar-login-button">
-          <input type="submit" value="Login" style="width: 66px;">       
+          <input type="submit" value="Login" style="width: 66px;" onclick="login(username.value, password.value)">       
         </div>
+      </div>
+      <div class="titlebar-logout" id="titlebar-logout">        
+        <label for="logout" id="titlebar-logout-uname">uname</label>
+        <input type="submit" value="Logout" style="width: 66px;" onclick="logout()">
       </div>
     </div>
 
     <div class="sidebar">
       <div class="sidebar-event">
         <label for="event">Select Event:</label><br>
-        <select name="event" id="event">
-          <option value="test">test</option>
-        </select>
+        <select name="event" id="event"></select>
       </div>
       <div class="sidebar-update">
-        <label for="update">Select Alert to Update:</label><br>
-        <select name="update" id="update">
-          <option value="test">test</option>
-        </select>
+        <div class="sidebar-update-label">
+          <label for="update">Select Alert Update:</label><br>
+          <input type="submit" value="Update List" id="update-button" name="update-button" style="width: 66px;" onclick="updateActiveAlerts()">
+        </div>
+        <select name="update" id="update"></select>
+        <input type="submit" value="Update Selected Alert" id="update-selection" name="update-selection" style="width: 100%; margin-top: 2px;" onclick="selectAlertUpdate()">
       </div>
       <div class="sidebar-expire">
-        <label for="expire">Select Expiration Time:</label><br>
-        <input type="datetime-local" id="expire" name="expire" min="2000-01-01T00:00"> 
+        <label for="expiretime">Select Expiration Time:</label><br>
+        <div class="sidebar-expire-times">
+          <input type="time" id="expiretime" name="expiretime"> 
+          <input type="date" id="expiredate" name="expiredate"> 
+        </div>
       </div>
       <div class="sidebar-locs">
         <label for="locs">Select Locations:</label><br>
-        <select name="locs" id="locs" multiple>
-          <option value="test">test</option>
-        </select>
+        <select name="locs" id="locs" multiple size="15"></select>
       </div>
       <div class="sidebar-buttons">
-        <div class="sidebar-buttons-send">
-          <input type="submit" value="Send" id="send" name="send" style="width: 66px;">
+        <div class="sidebar-buttons-1">
+          <div class="sidebar-buttons-update">
+            <input type="submit" value="Update" id="update-send-button" name="update-send-button" style="width: 66px;" onclick="sendMethod('update')">
+          </div>
+          <div class="sidebar-buttons-upgrade">
+            <input type="submit" value="Upgrade" id="upgrade" name="upgrade" style="width: 66px;" onclick="sendMethod('upgrade')">
+          </div>
+          <div class="sidebar-buttons-correct">
+            <input type="submit" value="Correct" id="correct" name="correct" style="width: 66px;" onclick="sendMethod('correct')">
+          </div>
         </div>
-        <div class="sidebar-buttons-cancel">
-          <input type="submit" value="Cancel" id="cancel" name="cancel" style="width: 66px;">
+        <div class="sidebar-buttons-2">
+          <div class="sidebar-buttons-send">
+            <input type="submit" value="Continue" id="continue" name="continue" style="width: 66px;" onclick="sendMethod('continue')">
+          </div>
+          <div class="sidebar-buttons-cancel">
+            <input type="submit" value="Cancel" id="cancel" name="cancel" style="width: 66px;" onclick="sendMethod('cancel')">
+          </div>
+          <div class="sidebar-buttons-expire">
+            <input type="submit" value="Expire" id="expire" name="expire" style="width: 66px;" onclick="sendMethod('expire')">
+          </div>
         </div>
-        <div class="sidebar-buttons-expire">
-          <input type="submit" value="Expire" id="expire" name="expire" style="width: 66px;">
+        <div class="sidebar-buttons-3">
+          <input type="submit" value="Send" id="send" name="send" style="width: 208px;" onclick="sendAlert()">          
         </div>
       </div>
     </div>
@@ -74,6 +95,7 @@
       </div>
     </div>
 
+    <script src="alerts.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
