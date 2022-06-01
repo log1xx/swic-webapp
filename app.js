@@ -1,7 +1,7 @@
 var loggedin = false;
 var date = new Date();
-//var api = 'http://ec2-75-101-220-225.compute-1.amazonaws.com:8080/'
-var api = 'http://localhost:8080/'
+var api = 'http://ec2-75-101-220-225.compute-1.amazonaws.com:8080/'
+//var api = 'http://localhost:8080/'
 
 window.addEventListener('load', () => {
   checkLogin();

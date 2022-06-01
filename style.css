@@ -142,6 +142,7 @@ body {
 }
 
 .main > div > input,
+.main > div > select,
 .main > div > textarea {
   width: 100%;
 }
@@ -150,6 +151,7 @@ body {
   flex-grow: 100;
 }
 
+.main-desc > select,
 .main-desc > textarea {
   height: calc(100% - 40px);
 }

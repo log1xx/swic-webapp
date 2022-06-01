@@ -5,7 +5,7 @@
     <meta name="veiwport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
     <link rel="stylesheet" href="./style.css" />
-    <title>swic-webapp</title>
+    <title>swic-webapp admin</title>
   </head>
   <body>
     <div class="titlebar">
@@ -14,7 +14,7 @@
       </div>
       <div class="titlebar-mid">
         <div class="titlebar-title">
-          <h1>swic-webapp</h1>
+          <h1>swic-webapp admin panel</h1>
         </div>
         <div class="titlebar-login" id="titlebar-login">
           <div class="titlebar-login-uname">
@@ -35,35 +35,31 @@
         </div>
       </div>
       <div class="titlebar-bottom">
-        <p>issue your alerts using swic-webapp</p>
+        <p>admin panel for the swic-webapp</p>
       </div>
     </div>
 
     <div class="sidebar">
-      <h2>Options</h2>
+      <h2>New/Edit Users</h2>
       <div class="sidebar-titlesep"></div>
-      <div class="sidebar-event">
-        <label for="event">Select Event:</label><br>
-        <select name="event" id="event"></select>
+      <div class="sidebar-newusername">
+        <label for="newUsername">New Username:</label><br>
+        <input type="text" id="newUsername" name="newUsername">
       </div>
-      <div class="sidebar-update">
-        <div class="sidebar-update-label">
-          <label for="update">Select Alert Update:</label><br>
-          <input type="submit" value="Update List" id="update-button" name="update-button" style="width: 66px;" onclick="updateActiveAlerts()">
-        </div>
-        <select name="update" id="update"></select>
-        <input type="submit" value="Update Selected Alert" id="update-selection" name="update-selection" style="width: 100%; margin-top: 2px;" onclick="selectAlertUpdate()">
+      <div class="sidebar-newpassword">
+        <label for="newPassword">New Password:</label><br>
+        <input type="text" id="newPassword" name="newPassword">
       </div>
-      <div class="sidebar-expire">
-        <label for="expiretime">Select Expiration Time:</label><br>
-        <div class="sidebar-expire-times">
-          <input type="time" id="expiretime" name="expiretime"> 
-          <input type="date" id="expiredate" name="expiredate"> 
-        </div>
+      <div class="sidebar-wfo">
+        <label for="wfo">WFO:</label><br>
+        <input type="text" id="wfo" name="wfo">
       </div>
-      <div class="sidebar-locs">
-        <label for="locs">Select Locations:</label><br>
-        <select name="locs" id="locs" multiple size="15"></select>
+      <div class="sidebar-acctype">
+        <label for="acctype">Select Account Type:</label><br>
+        <select name="acctype" id="acctype">
+            <option value="admin">Admin</option>
+            <option value="forcaster">Forecaster</option>
+        </select>
       </div>
       <div class="sidebar-buttons">
         <div class="sidebar-buttons-1">
@@ -71,10 +67,10 @@
             <input type="submit" value="Update" id="update-send-button" name="update-send-button" style="width: 66px;" onclick="sendMethod('update')">
           </div>
           <div class="sidebar-buttons-upgrade">
-            <input type="submit" value="Upgrade" id="upgrade" name="upgrade" style="width: 66px;" onclick="sendMethod('upgrade')">
+            <input type="submit" value="Create" id="create" name="create" style="width: 66px;" onclick="sendUser('create')">
           </div>
           <div class="sidebar-buttons-correct">
-            <input type="submit" value="Correct" id="correct" name="correct" style="width: 66px;" onclick="sendMethod('correct')">
+            <input type="submit" value="Delete" id="correct" name="correct" style="width: 66px;" onclick="sendMethod('correct')">
           </div>
         </div>
         <div class="sidebar-buttons-2">
@@ -97,13 +93,17 @@
     <div class="main">
       <h2>Text Data</h2>
       <div class="main-titlesep"></div>
-      <div class="main-headline">
-        <label for="headline">Headline/Alert Name:</label><br>
-        <input type="text" id="headline" name="headline">    
+      <div class="main-wfoid">
+        <label for="wfoid">WFO ID:</label><br>
+        <input type="text" id="wfoid" name="wfoid">    
+      </div>
+      <div class="main-wfoname">
+        <label for="wfoname">WFO Name:</label><br>
+        <input type="text" id="wfoname" name="wfoname">    
       </div>
       <div class="main-desc">
-        <label for="desc">Message:</label><br>
-        <textarea id="desc" name="desc"></textarea>    
+        <label for="counties">Counties:</label><br>
+        <select name="counties" id="counties" multiple size="15"></select> 
       </div>
     </div>
 
