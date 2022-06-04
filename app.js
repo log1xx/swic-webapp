@@ -104,6 +104,8 @@ function getWfoLocs() {
     .then(res => res.json())
     .then(res => {
       var locsSelect = document.getElementById('locs');
+      var locsNoLoc = new Option("No Location", ',,');
+      locsSelect.appendChild(locsNoLoc);
       res.locs.forEach(element => {
         var locsOption = new Option(element.county + ", " + element.state, element.fips + ',' + element.county + ',' + element.state);
         locsSelect.appendChild(locsOption);
